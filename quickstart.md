@@ -1,0 +1,103 @@
+# Quickstart Guide for mev-commit CLI
+
+## Getting Started with the CLI
+
+mev-commit software operates as a command-line interface (CLI) tool, designed for users to run in their own environments. The CLI mainly includes two commands. To view available commands, use the `-h` or `--help` option with the main command.
+
+Example:
+
+```
+❯ mev-commit -h
+NAME:
+   mev-commit - Entry point for mev-commit
+
+USAGE:
+   mev-commit [global options] command [command options] [arguments...]
+
+VERSION:
+   "v1.0.0-alpha-a834960"
+
+COMMANDS:
+   start       Start the mev-commit node
+   create-key  Create a new ECDSA private key and save it to a file
+   help, h     Shows a list of commands or help for one command
+
+GLOBAL OPTIONS:
+   --help, -h     show help
+   --version, -v  print the version
+```
+
+## Generating ECDSA Private Key
+
+Users have the option to either use an existing ECDSA private key or generate a new one using the `create-key` command. This key is essential as it derives the Ethereum address of the node participating in the network.
+
+Example:
+
+```
+❯ mev-commit create-key -h
+NAME:
+   mev-commit create-key - Create a new ECDSA private key and save it to a file
+
+USAGE:
+   mev-commit create-key [command options] <output_file>
+
+OPTIONS:
+   --help, -h  show help
+```
+## Configuration File Setup
+
+To run a node, users need to create a configuration file in YAML format. Example config files are available in the [config](https://github.com/primevprotocol/mev-commit/tree/main/config) folder. The important options are defined below:
+
+```yaml
+# Path to private key file.
+priv_key_file: ~/.mev-commit/keys/nodekey
+
+# Type of peer. Options are provider and user.
+peer_type: provider
+
+# Port used for P2P traffic. If not configured, 13522 is the default.
+p2p_port: 13522
+
+# Port used for HTTP traffic. If not configured, 13523 is the default.
+http_port: 13523
+
+# Port used for RPC API. If not configured, 13524 is the default.
+rpc_port: 13524
+
+# Secret for the node. This is used to authorize the nodes. The value doesnt matter as long as it is sufficiently unique. It is signed using the private key.
+secret: hello
+
+# Format used for the logs. Options are "text" or "json".
+log_fmt: text
+
+# Log level. Options are "debug", "info", "warn" or "error".
+log_level: debug
+
+# Bootnodes used for bootstrapping the network.
+bootnodes:
+  - /ip4/35.91.118.20/tcp/13522/p2p/16Uiu2HAmAG5z3E8p7o19tEcLdGvYrJYdD1NabRDc6jmizDva5BL3
+
+# The default is set to false for development reasons. Change it to true if you wish to accept bids on your provider instance
+expose_provider_api: false
+```
+
+Place this config file in a folder, preferably in a newly created `.mev-commit` folder in the home directory. Once this is done, users can start the node using the `start` command.
+
+Example:
+
+```
+❯ mev-commit start -h
+NAME:
+   mev-commit start - Start the mev-commit node
+
+USAGE:
+   mev-commit start [command options] [arguments...]
+
+OPTIONS:
+   --config value  path to config file [$MEV_COMMIT_CONFIG]
+   --help, -h      show help
+```
+
+## Using Docker
+
+Alternatively, users can use the Docker images to run the client in their Docker environment. You need to ensure the node can communicate with other provider or user nodes.
