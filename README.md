@@ -36,7 +36,7 @@ mev-commit is inherently pseudonymous, allowing any Ethereum address to submit a
 Commitments are signatures from providers accepting bids. mev-commit offers standard and privacy-preserving commitment methods for providers to choose from. Privacy-preserving commitments safeguard the confidentiality of commitment details, letting only the bidder know their bid is committed to during the block slot, and revealing the full details for the network after the slot concludes. mev-commit will have privacy preserving commitments in a subsequent release during the testnet phase.
 
 You can read more about how mev-commit enables execution commitment privacy [here](https://mirror.xyz/0xB456F9deb9bB6f545f91Ce2949C458c3A723659e/1gjUCw9tCUDZ2U71N-6IkINeJYyhuTdC7WeVeBam-fM).
-
+ 
 ## mev-commit chain
 
 Bids and commitments settle on a POA EVM chain at the end of a block slot. It operates as a high-throughput chain to expedite the settlement process and breaks down L1 blocks into smaller chunks in block time (eg. 1 L1 block in 12s can be 50 blocks in mev-commit). mev-commit chain will become a federated rollup in the future to providers on the network to assume the "sequencer" role in turns as governance processes are initiated. The chain validator acts as a network peer and handles transaction and fund settlements, rewards, or slashes.
