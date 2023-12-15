@@ -12,11 +12,11 @@ Under PBS, information only moves to the right amongst actors in the mev pipelin
 
 **Providers**
 
-Providers of execution services, like **Block Builders and Rollup Sequencers**.
+Providers of execution services, such as **Block Builders and Rollup Sequencers**.
 
-**Users**
+**Bidders**
 
-Users of execution services include **mev searchers, AA bundlers, Rollup Provers, and others seeking efficient use of block space**.
+Users bidding for execution services include **mev searchers, AA bundlers, solvers, Rollup Provers, and others seeking efficient use of block space**.
 
 ## Network Topology
 
@@ -33,7 +33,7 @@ mev-commit is inherently pseudonymous, allowing any Ethereum address to submit a
 
 ## Commitments and Privacy
 
-Commitments are signatures from providers accepting bids. mev-commit offers standard and privacy-preserving methods for providers to choose from. Privacy-preserving commitments safeguard the confidentiality of commitment details, letting only the bidder know their bid is committed to during the block slot, and revealing the full details for the network after the slot concludes.
+Commitments are signatures from providers accepting bids. mev-commit offers standard and privacy-preserving commitment methods for providers to choose from. Privacy-preserving commitments safeguard the confidentiality of commitment details, letting only the bidder know their bid is committed to during the block slot, and revealing the full details for the network after the slot concludes. mev-commit will have privacy preserving commitments in a subsequent release during the testnet phase.
 
 You can read more about how mev-commit enables execution commitment privacy [here](https://mirror.xyz/0xB456F9deb9bB6f545f91Ce2949C458c3A723659e/1gjUCw9tCUDZ2U71N-6IkINeJYyhuTdC7WeVeBam-fM).
 
