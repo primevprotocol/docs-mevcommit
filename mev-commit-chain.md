@@ -4,7 +4,7 @@
 
 Primev will maintain a testnet consisting of the mev-commit chain, oracle service, and hyperlane bridge to Sepolia. 
 
-<img src="mev-commit-chain.png" alt="mev-commit chain diagram" width="500" height="425"/>
+<img src="public/mev-commit-chain.png" alt="mev-commit chain diagram" width="500" height="425"/>
 
 ## mev-commit chain connection details
 
