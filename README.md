@@ -5,7 +5,7 @@ mev-commit is peer-to-peer (P2P) networking software that serves as a conduit fo
 
 ## Actors
 
-The actors' roles are defined with respect to their interactions with other ecosystem actors. A diagram of potential actors depicts a given actor's relative placement compared to others below. For example, a Searcher is a bidder for a Sequencer; but that same Sequencer can be a bidder for a block builder. Thus it's best to think of actors' roles in mev-commit similar to their roles in the mev pipeline. To the left of the diagram are bidders, and to the right of the diagram are execution providers who can issue commitments against these bids.
+Network actors' roles are defined based on their interactions with other ecosystem actors. A diagram below depicts a given mev actor's relative placement compared to others. For example, a Searcher is a bidder for a Sequencer; but that same Sequencer can be a bidder for a block builder. Thus it's best to think of actors' roles in mev-commit similar to their roles in the mev pipeline. To the left of the diagram are bidders, and to the right of the diagram are execution providers who can issue commitments against these bids.
 
 Under PBS, information only moves to the right amongst actors in the mev pipeline. With mev-commit, credible commitments for execution that share bits of information flow from providers back to bidders, who consume blockspace.
 ![](public/mev-supply-chain.png)
