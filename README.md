@@ -39,7 +39,9 @@ You can read more about how mev-commit enables execution commitment privacy [her
  
 ## mev-commit chain
 
-Bids and commitments settle on a POA EVM chain at the end of a block slot. It operates as a high-throughput chain to expedite the settlement process and breaks down L1 blocks into smaller chunks in block time (eg. 1 L1 block in 12s can be 50 blocks in mev-commit). mev-commit chain will become a federated rollup in the future to providers on the network to assume the "sequencer" role in turns as governance processes are initiated. The chain validator acts as a network peer and handles transaction and fund settlements, rewards, or slashes.
+Bids and commitments will settle on a specialized EVM sidechain ran with go-ethereum’s Clique proof-of-authoriy (POA) consensus mechanism. Initially operated by Primev entities, the mev-commit chain handles fund settlements, rewards, and slashing. Over time we plan to authorize entities from around the MEV ecosystem to join the POA block signer set. The end goal is to enable a federated mev-commit chain where various actors from the system are assuming the block producer role in turns. Note the mev-commit chain is entirely separate from the Ethereum mainnet blockspace, and is optimized for significantly higher throughput.
+
+For more information, see [mev-commit chain details](mev-commit-chain.md).
 
 ## Network Flows
 
