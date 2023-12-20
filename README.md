@@ -5,10 +5,10 @@ mev-commit is peer-to-peer (P2P) networking software that serves as a conduit fo
 
 ## Actors
 
-The actors' roles are defined with respect to their interactions with other ecosystem actors. A diagram of potential actors depicts a given actor's relative placement compared to others below. For example, a Searcher is a bidder for a Sequencer; but that same Sequencer can be a bidder for a block builder. Thus it's best to think of actors' roles in mev-commit similar to their roles in the mev pipeline. To the left of the diagram are bidders, and to the right of the diagram are execution providers who can issue commitments against these bids.
+Network actors' roles are defined based on their interactions with other ecosystem actors. A diagram below depicts a given mev actor's relative placement compared to others. For example, a Searcher is a bidder for a Sequencer; but that same Sequencer can be a bidder for a block builder. Thus it's best to think of actors' roles in mev-commit similar to their roles in the mev pipeline. To the left of the diagram are bidders, and to the right of the diagram are execution providers who can issue commitments against these bids.
 
 Under PBS, information only moves to the right amongst actors in the mev pipeline. With mev-commit, credible commitments for execution that share bits of information flow from providers back to bidders, who consume blockspace.
-![](mev-supply-chain.png)
+![](public/mev-supply-chain.png)
 
 **Providers**
 
@@ -22,14 +22,14 @@ Users bidding for execution services include **mev searchers, AA bundlers, solve
 
 Mev-commit's p2p network is structured to allow real-time communication across network actors:
 
-<img src="topology.png" alt="Topology" width="500" height="500"/>
+<img src="public/topology.png" alt="Topology" width="500" height="500"/>
 
 **Connections:** Users and providers are interconnected, with each node initially accessing a primary network node (bootnode) for startup.
 **Gateway Nodes:** Providers can set up gateway nodes, allowing bid submissions to their mev-commit RPC endpoint first. These bids will also be gossiped amongst providers.
 
 ## Bids and Privacy
 
-mev-commit is inherently pseudonymous, allowing any Ethereum address to submit a bid for the execution of any transaction, including bids for transactions that belong to others. Bids are visible to providers on the network and are identifiable by transaction hashes. Bids get processed by network providers and mev-commit chain validators for verifiable commitments and seamless reward settlement. mev-commit will develop bid privacy with stronger cryptographic guarantees over time.
+mev-commit is inherently pseudonymous, allowing any Ethereum address to submit a bid for the execution of any transaction, including bids for transactions that belong to others. Bids are visible to providers on the network and are identifiable by transaction hashes. Bids get processed by network providers and mev-commit chain nodes for verifiable commitments and seamless reward settlement. mev-commit will develop bid privacy with stronger cryptographic guarantees over time.
 
 ## Commitments and Privacy
 
@@ -39,10 +39,34 @@ You can read more about how mev-commit enables execution commitment privacy [her
  
 ## mev-commit chain
 
-Bids and commitments settle on a POA EVM chain at the end of a block slot. It operates as a high-throughput chain to expedite the settlement process and breaks down L1 blocks into smaller chunks in block time (eg. 1 L1 block in 12s can be 50 blocks in mev-commit). mev-commit chain will become a federated rollup in the future to providers on the network to assume the "sequencer" role in turns as governance processes are initiated. The chain validator acts as a network peer and handles transaction and fund settlements, rewards, or slashes.
+Bids and commitments will settle on a specialized EVM sidechain ran with go-ethereum’s Clique proof-of-authoriy (POA) consensus mechanism. Initially operated by Primev entities, the mev-commit chain handles fund settlements, rewards, and slashing. Over time we plan to authorize entities from around the MEV ecosystem to join the POA block signer set. The end goal is to enable a federated mev-commit chain where various actors from the system are assuming the block producer role in turns. Note the mev-commit chain is entirely separate from the Ethereum mainnet blockspace, and is optimized for significantly higher throughput.
+
+For more information, see [mev-commit chain details](mev-commit-chain.md).
 
 ## Network Flows
 
 The diagram below illustrates how **bids, commitments, and funds** flow with mev-commit, reflecting its efficiency in facilitating P2P interactions for mev actors.
 
-<img src="flow.png" alt="Topology" width="750" height="650"/>
+<img src="public/flow.png" alt="Topology" width="750" height="650"/>
+
+## Get Started
+We hope you find this documentation helpful and invite you to contribute to the protocol and docs. As a next step, you can:
+- Jump to the [Quickstart section](https://docs.primev.xyz/quickstart#getting-started-with-the-cli)
+- Jump to the [API clients section for providers](https://docs.primev.xyz/api-clients#for-providers)
+- Jump to the [API clients section for bidders](https://docs.primev.xyz/api-clients#for-bidders)
+
+We look forward to having you join the mev-commit network!
+
+## Contributing
+
+For all bug reporting, feature requests, code contributions, or technical suggestions feel free to create a PR or [DM us on Twitter](https://twitter.com/primev_xyz).
+
+mev-commit will evolve as the network grows across different types of actors who leverage emerging use cases. We're constantly evolving our technical approaches in collaboration with researchers and advisors across the ecosystem. If you have a suggestion or a constructive approach, do reach out!
+
+## License
+
+mev-commit and Primev documentation are currently available under an MIT license.
+
+## Support
+
+If you need further assistance or have any questions, feel free to [DM us on Twitter](https://twitter.com/primev_xyz). If you want a direct communication channel, you can tell us your issue, and our team will create a Telegram group with the relevant people. We're open to suggestions if you're looking for an alternative way of receiving support.
