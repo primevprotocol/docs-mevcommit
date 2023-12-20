@@ -29,7 +29,7 @@ Mev-commit's p2p network is structured to allow real-time communication across n
 
 ## Bids and Privacy
 
-mev-commit is inherently pseudonymous, allowing any Ethereum address to submit a bid for the execution of any transaction, including bids for transactions that belong to others. Bids are visible to providers on the network and are identifiable by transaction hashes. Bids get processed by network providers and mev-commit chain validators for verifiable commitments and seamless reward settlement. mev-commit will develop bid privacy with stronger cryptographic guarantees over time.
+mev-commit is inherently pseudonymous, allowing any Ethereum address to submit a bid for the execution of any transaction, including bids for transactions that belong to others. Bids are visible to providers on the network and are identifiable by transaction hashes. Bids get processed by network providers and mev-commit chain nodes for verifiable commitments and seamless reward settlement. mev-commit will develop bid privacy with stronger cryptographic guarantees over time.
 
 ## Commitments and Privacy
 
