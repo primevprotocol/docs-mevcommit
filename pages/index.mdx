@@ -10,8 +10,14 @@ The actors' roles are defined with respect to their interactions with other ecos
 
 Under PBS, information only moves to the right amongst actors in the mev pipeline. With mev-commit, credible commitments for execution that share bits of information flow from providers back to bidders, who consume blockspace.
 
-<br/>
-<img style={{borderRadius: "4px"}} src="mev-supply-chain.png" alt="Topology" width="500" height="500" />
+<br />
+<img
+  style={{ borderRadius: "4px" }}
+  src="mev-supply-chain.png"
+  alt="Topology"
+  width="100%"
+  height="500"
+/>
 
 **Providers**
 
@@ -25,8 +31,14 @@ Users bidding for execution services include **mev searchers, AA bundlers, solve
 
 Mev-commit's p2p network is structured to allow real-time communication across network actors:
 
-<br/>
-<img src="topology.png" style={{borderRadius: "4px"}} alt="Topology" width="500" height="500" />
+<br />
+<img
+  src="topology.png"
+  style={{ borderRadius: "4px" }}
+  alt="Topology"
+  width="100%"
+  height="500"
+/>
 
 **Connections:** Users and providers are interconnected, with each node initially accessing a primary network node (bootnode) for startup.
 **Gateway Nodes:** Providers can set up gateway nodes, allowing bid submissions to their mev-commit RPC endpoint first. These bids will also be gossiped amongst providers.
@@ -48,5 +60,12 @@ Bids and commitments settle on a POA EVM chain at the end of a block slot. It op
 ## Network Flows
 
 The diagram below illustrates how **bids, commitments, and funds** flow with mev-commit, reflecting its efficiency in facilitating P2P interactions for mev actors.
-<br/>
-<img style={{borderRadius: "4px"}} src="flow.png" alt="Topology" width="750" height="650" />
+
+<br />
+<img
+  style={{ borderRadius: "4px" }}
+  src="flow.png"
+  alt="Topology"
+  width="750"
+  height="650"
+/>
