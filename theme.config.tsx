@@ -1,6 +1,7 @@
 import React from "react"
 import { DocsThemeConfig, useConfig } from "nextra-theme-docs"
 import Image from "next/image"
+import { useRouter } from "next/router"
 
 const config: DocsThemeConfig = {
   logo: <Image src="/primev-logo.png" width={120} height={0} alt="PRIM𝝣V" />,
@@ -39,20 +40,17 @@ const config: DocsThemeConfig = {
         {/* <meta name="twitter:image" content={socialCard} /> */}
         {/* <meta name="twitter:site:domain" content="primev.xyz" /> */}
         <meta name="twitter:url" content="https://primev.xyz/" />
-        <meta
-          name="og:title"
-          content={title ? title + " – PRIM𝝣V" : "PRIM𝝣V"}
-        />
+
         {/* <meta name="og:image" content={socialCard} /> */}
         <meta name="apple-mobile-web-app-title" content="PRIM𝝣V" />
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        {/* <link rel="icon" href="/favicon.svg" type="image/svg+xml" /> */}
         <link rel="icon" href="/favicon.png" type="image/png" />
-        <link
+        {/* <link
           rel="icon"
           href="/favicon-dark.svg"
           type="image/svg+xml"
           media="(prefers-color-scheme: dark)"
-        />
+        /> */}
         <link
           rel="icon"
           href="/favicon-dark.png"
@@ -61,6 +59,14 @@ const config: DocsThemeConfig = {
         />
       </>
     )
+  },
+  useNextSeoProps() {
+    const { asPath } = useRouter()
+    if (asPath !== "/") {
+      return {
+        titleTemplate: "%s - PRIM𝝣V",
+      }
+    }
   },
   footer: {
     text: "© 2023 Open Source",
