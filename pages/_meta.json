@@ -2,5 +2,6 @@
   "index": "Introduction",
   "quickstart": "Quickstart",
   "api-clients": "API clients",
+  "mev-commit-chain": "Mev Commit Chain",
   "debugging": "Debugging"
 }
