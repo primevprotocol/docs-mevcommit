@@ -4,6 +4,17 @@
 
 mev-commit is peer-to-peer (P2P) networking software that serves as a conduit for real-time communication with execution providers. mev-commit enables mev actors to join and utilize a P2P network for the exchange of execution bids and commitments, enriching the transaction execution experience by allowing for granular specification of execution needs and receiving real-time credible commitments.
 
+## System overview
+
+<br />
+
+<img
+  src="overview.png"
+  style={{ borderRadius: "4px" }}
+  alt="Topology"
+  width="100%"
+  height="500"
+/>
 ## Actors
 
 Network actors' roles are defined based on their interactions with other ecosystem actors. A diagram below depicts a given mev actor's relative placement compared to others. For example, a Searcher is a bidder for a Sequencer; but that same Sequencer can be a bidder for a block builder. Thus it's best to think of actors' roles in mev-commit similar to their roles in the mev pipeline. To the left of the diagram are bidders, and to the right of the diagram are execution providers who can issue commitments against these bids.
@@ -33,7 +44,7 @@ Mev-commit's p2p network is structured to allow real-time communication across n
 
 <br />
 <img
-  src="topology.png"
+  src="network.png"
   style={{ borderRadius: "4px" }}
   alt="Topology"
   width="100%"
