@@ -7,14 +7,19 @@ mev-commit is peer-to-peer (P2P) networking software that serves as a conduit fo
 ## System overview
 
 <br />
-
 <img
   src="overview.png"
-  style={{ borderRadius: "4px" }}
-  alt="Topology"
-  width="100%"
-  height="500"
+  style={{ 
+    borderRadius: "4px",
+    display: "block",  /* Centers the image horizontally */
+    marginLeft: "auto",
+    marginRight: "auto",
+    width: "80%",  /* Reduces the width by 20% */
+    height: "auto"  /* Adjusts the height automatically to maintain aspect ratio */
+  }}
+  alt="Overview"
 />
+
 ## Actors
 
 Network actors' roles are defined based on their interactions with other ecosystem actors. A diagram below depicts a given mev actor's relative placement compared to others. For example, a Searcher is a bidder for a Sequencer; but that same Sequencer can be a bidder for a block builder. Thus it's best to think of actors' roles in mev-commit similar to their roles in the mev pipeline. To the left of the diagram are bidders, and to the right of the diagram are execution providers who can issue commitments against these bids.
@@ -25,7 +30,7 @@ Under PBS, information only moves to the right amongst actors in the mev pipelin
 <img
   style={{ borderRadius: "4px" }}
   src="mev-supply-chain.png"
-  alt="Topology"
+  alt="MEV Supply Chain"
   width="100%"
   height="500"
 />
@@ -46,7 +51,7 @@ Mev-commit's p2p network is structured to allow real-time communication across n
 <img
   src="network.png"
   style={{ borderRadius: "4px" }}
-  alt="Topology"
+  alt="Network"
   width="100%"
   height="500"
 />
@@ -76,7 +81,7 @@ The diagram below illustrates how **bids, commitments, and funds** flow with mev
 <img
   style={{ borderRadius: "4px" }}
   src="flow.png"
-  alt="Topology"
+  alt="Network Flow"
   width="750"
   height="650"
 />
