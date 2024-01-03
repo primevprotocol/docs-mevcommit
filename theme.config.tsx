@@ -14,12 +14,12 @@ const config: DocsThemeConfig = {
     dark: 82, // Saturation value for dark mode (0-100)
   },
   project: {
-    link: "https://github.com/primevprotocol/primev-docs",
+    link: "https://github.com/primevprotocol/mev-commit",
   },
   chat: {
     link: "https://discord.com",
   },
-  docsRepositoryBase: "https://github.com/primevprotocol/primev-docs",
+  docsRepositoryBase: "https://github.com/primevprotocol/mev-commit",
   head: function useHead() {
     const { title } = useConfig()
     // const { route } = useRouter()
