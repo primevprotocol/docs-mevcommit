@@ -3,5 +3,21 @@
   "quickstart": "Quickstart",
   "api-clients": "API clients",
   "mev-commit-chain": "Mev Commit Chain",
-  "debugging": "Debugging"
+  "debugging": "Debugging",
+  "api-reference": {
+    "title": "Api Reference",
+    "type": "menu",
+    "items": {
+      "bid": {
+        "title": "Provider",
+        "href": "https://mev-commit-docs.s3.amazonaws.com/provider.html",
+        "newWindow": true
+      },
+      "contact": {
+        "title": "Bidder",
+        "href": "https://mev-commit-docs.s3.amazonaws.com/bidder.html",
+        "newWindow": true
+      }
+    }
+  }
 }
