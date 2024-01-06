@@ -16,9 +16,6 @@ const config: DocsThemeConfig = {
   project: {
     link: "https://github.com/primevprotocol/mev-commit",
   },
-  chat: {
-    link: "https://discord.com",
-  },
   docsRepositoryBase: "https://github.com/primevprotocol/mev-commit",
   head: function useHead() {
     const { title } = useConfig()
