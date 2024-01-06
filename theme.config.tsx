@@ -16,7 +16,8 @@ const config: DocsThemeConfig = {
   project: {
     link: "https://github.com/primevprotocol/mev-commit",
   },
-  docsRepositoryBase: "https://github.com/primevprotocol/mev-commit",
+  docsRepositoryBase:
+    "https://github.com/primevprotocol/docs-mevcommit/blob/main",
   head: function useHead() {
     const { title } = useConfig()
     // const { route } = useRouter()
@@ -68,6 +69,9 @@ const config: DocsThemeConfig = {
   footer: {
     text: "© 2023 Open Source",
   },
+  toc: {
+    float: false,
+  }
 }
 
 export default config
